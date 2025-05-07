@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Screeners</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="" alt="" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><i class="fas fa-chart-line"></i> Markets</li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Stocks</a></li>
+                    <li><a href="#">Technical Signals</a></li>
+                    <li><a href="#">Sectors</a></li>
+                    <li><a href="#">Indices</a></li>
+                    <li><a href="#">ET Learn</a></li>
+                    <li><a href="#">Fill DIl</a></li>
+                    <li><a href="#">Earnings</a></li>
+                    <li><a href="#">Corporate Actions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Technical Chart</a></li>
+                    <li><a href="#">Live Stream</a></li>
+                    <li class="separator"><i class="fas fa-heart"></i> My Watchlist</li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Stock Recos</a></li>
+                    <li class="active"><i class="fas fa-filter"></i> Screeners</li>
+                    <li class="sub-menu-header">ETPRIME</li>
+                    <li><a href="#">Upside Radar</a></li>
+                    <li><a href="#">BigBull Portfolio</a></li>
+                    <li><a href="#">Stock Reports Plus</a></li>
+                    <li><a href="#">Market Mood</a></li>
+                    <li><a href="#">Investment Ideas</a></li>
+                    <li><a href="#">ePaper</a></li>
+                    <li><a href="#">Stock Talk</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+                    <img src="Screenshot 2025-05-05 164713.png" alt="ETMarkets Logo" class="header-logo">
+                    
+                    <div class="search-bar">
+                         <i class="fas fa-search"></i>
+                         <input type="text" placeholder="Search Stock">
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="learn-link">Learn Value Investing</a>
+                    <span class="offer-banner">MONTH END OFFER: FLAT 40% OFF!</span>
+                    <button class="subscribe-btn">Subscribe</button>
+                    <button class="signin-btn">Sign In</button>
+                </div>
+            </header>
+
+            <section class="screeners-section">
+                <h1>Stock Screeners</h1>
+                <p class="subtitle">Discover the hidden gems from pre-built screeners or create your own with over 700+ data points.</p>
+
+                <div class="custom-search-section">
+                     <h2><img src="Screenshot 2025-05-05 165712.png" alt="+" class="custom-search-icon"> Screen Stocks through Custom Search</h2>
+                     <div class="search-input-area">
+                         <input type="text" id="custom-search-input" placeholder="Mining Stocks with a Monthly Breakout...">
+                         <button class="search-btn" id="custom-search-button">Search</button>
+                     </div>
+                     <div class="screener-options">
+                        <button>+ Create Screeners</button>
+                        <button>Industry <i class="fas fa-chevron-down"></i></button>
+                        <button>Personalise</button>
+                        <button>Export <i class="fas fa-chevron-down"></i></button>
+                     </div>
+
+                     <!-- ADDED: Placeholder divs for displaying SQL and results -->
+                     <div class="output-area" style="margin-top: 20px;">
+                         <h4>Generated SQL:</h4>
+                         <pre id="generated-sql" style="background-color: #eee; padding: 10px; border: 1px solid #ccc; white-space: pre-wrap; word-wrap: break-word; font-family: monospace;">Waiting for query...</pre>
+                         
+                         <h4>Results:</h4>
+                         <div id="custom-search-results">No results yet.</div>
+                     </div>
+                     <!-- END ADDED -->
+                     
+                 </div>
+                
+            </section>
+
+            <section class="new-category-layout">
+                <div class="category-box">
+                    <h3>Earnings Decoded</h3>
+                    <p class="box-subtitle">Make the best of earnings season with these pre built screeners</p>
+                    <div class="category-item">
+                        <div>
+                            <h4>Turnaround Champs <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks which have shown promising results after prolonged time of losses</p>
+                        </div>
+                        <span class="item-count">42 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Stellar Earnings Growth <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>List of stocks which have grown immensely on a QoQ basis</p>
+                        </div>
+                        <span class="item-count">73 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Straight Flush <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Quality stocks showing consistent earnings growth</p>
+                        </div>
+                        <span class="item-count">50 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Negative Turnaround <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Companies showing losses after a prolonged period of profit</p>
+                        </div>
+                        <span class="item-count">15 <span>stocks</span></span>
+                    </div>
+                </div>
+                <div class="category-box">
+                    <h3>Analyst Corner</h3>
+                    <p class="box-subtitle">Check out stocks with recent revisions on their ratings and target prices</p>
+                    <div class="category-item">
+                        <div>
+                            <h4>Potential Upside <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks with high potential upside compared to current price</p>
+                        </div>
+                        <span class="item-count">118 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Rating Upgrade <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks which have received recent upgrades from analysts</p>
+                        </div>
+                        <span class="item-count">68 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Target Price Revision <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks with recent upward revisions in target prices</p>
+                        </div>
+                        <span class="item-count">95 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Strong Buy Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks with a strong buy recommendation from analysts</p>
+                        </div>
+                        <span class="item-count">102 <span>stocks</span></span>
+                    </div>
+                </div>
+                <div class="category-box">
+                    <h3>Price and Volume</h3>
+                    <p class="box-subtitle">Catch stocks which are witnessing upward price momentum or volume surge</p>
+                    <div class="category-item">
+                        <div>
+                            <h4>52-Week High Breakout <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks which have crossed their 52-week highs</p>
+                        </div>
+                        <span class="item-count">25 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Trending Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks that are currently popular among investors</p>
+                        </div>
+                        <span class="item-count">88 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Volume Shockers <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks which have witnessed a sudden surge in volume</p>
+                        </div>
+                        <span class="item-count">55 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Golden Crossover <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Stocks where the short-term moving average crosses above the long-term moving average</p>
+                        </div>
+                        <span class="item-count">40 <span>stocks</span></span>
+                    </div>
+                </div>
+                <div class="category-box">
+                    <h3>Sectoral Scan</h3>
+                    <p class="box-subtitle">Gain insights into specific sectors and find the best performing stocks</p>
+                    <div class="category-item">
+                        <div>
+                            <h4>Top Performing Banks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>List of banks showing strong financial performance</p>
+                        </div>
+                        <span class="item-count">18 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Fast Growing IT Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Information Technology stocks with high growth rates</p>
+                        </div>
+                        <span class="item-count">60 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>Promising Pharma Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Pharmaceutical stocks with good future potential</p>
+                        </div>
+                        <span class="item-count">35 <span>stocks</span></span>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <h4>High Momentum Auto Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                            <p>Automobile stocks showing strong upward momentum</p>
+                        </div>
+                        <span class="item-count">22 <span>stocks</span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- New Stock Categories Section -->
+            <section class="stock-categories">
+                <div class="category-box">
+                    <h3>Fundamental Stocks</h3>
+                    <p>Uncover solid companies with strong financial health and growth potential.</p>
+                    <div class="category-items">
+                        <div class="category-item">
+                            <div>
+                                <h4>Large-Cap Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Focuses on stocks of well-established, financially stable companies with a large market capitalization...</p>
+                            </div>
+                            <span class="item-count">177 <span>stocks</span></span>
+                        </div>
+                        <div class="category-item">
+                            <div>
+                                <h4>Undervalued Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Identifies stocks that may be trading below their intrinsic value, potentially presenting investment opportunities...</p>
+                            </div>
+                            <span class="item-count">620 <span>stocks</span></span>
+                        </div>
+                        <div class="category-item">
+                            <div>
+                                <h4>Low P/E Ratio Stocks <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Spotlights stocks with lower Price-to-Earnings ratios, suggesting potentially undervalued companies...</p>
+                            </div>
+                            <span class="item-count">1163 <span>stocks</span></span>
+                        </div>
+                        <div class="category-item">
+                            <div>
+                                <h4>Price below Book Value <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Discover undervalued Indian stocks, including Sensex and Nifty components, trading below their book value...</p>
+                            </div>
+                            <span class="item-count">480 <span>stocks</span></span>
+                        </div>
+                    </div>
+                    <a href="#" class="view-more-link">View More <i class="fas fa-chevron-down fa-xs"></i></a>
+                </div>
+                <div class="category-box">
+                    <h3>Dividend Focus</h3>
+                    <p>Discover high-yield stocks efficiently with Dividend Focus screener. Identify strong dividend players for your portfolio.</p>
+                    <div class="category-items">
+                        <div class="category-item">
+                            <div>
+                                <h4>Low Price-to-Earnings (P/E) Dividend Gems <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Targets dividend stocks with attractive valuations, appealing to investors seeking income opportunities...</p>
+                            </div>
+                            <span class="item-count">31 <span>stocks</span></span>
+                        </div>
+                        <div class="category-item">
+                            <div>
+                                <h4>Defensive Dividend Champions <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>This strategy targets stable income for investors, emphasizing low-volatility dividend stocks...</p>
+                            </div>
+                            <span class="item-count">42 <span>stocks</span></span>
+                        </div>
+                        <div class="category-item">
+                            <div>
+                                <h4>Value Stocks with High Dividend Growth <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Identifies value stocks with strong dividend growth potential, appealing to investors seeking both value...</p>
+                            </div>
+                            <span class="item-count">347 <span>stocks</span></span>
+                        </div>
+                        <div class="category-item">
+                            <div>
+                                <h4>International Dividend Opportunities <i class="fas fa-chevron-right fa-xs"></i></h4>
+                                <p>Focuses on dividend-paying stocks from international markets, catering to investors seeking income...</p>
+                            </div>
+                            <span class="item-count">93 <span>stocks</span></span>
+                        </div>
+                    </div>
+                    <a href="#" class="view-more-link">View More <i class="fas fa-chevron-down fa-xs"></i></a>
+                </div>
+             </section>
+             <!-- End New Stock Categories Section -->
+
+            <!-- Bottom Section Image -->
+            <img src="Screenshot 2025-05-05 172218.png" alt="ET Browse Section" class="et-bottom-image">
+            <!-- End Bottom Section Image -->
+
+              <!-- Main Footer -->
+              <footer class="main-footer">
+                  <div class="footer-links">
+                 </footer>
+                 <!-- End Main Footer -->
+
+<script src="script.js"></script>
+</body>
+</html>

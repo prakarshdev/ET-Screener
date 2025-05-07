@@ -1,0 +1,590 @@
+/* Basic Reset & Font */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 13px;
+    overflow-x: hidden; /* Prevent horizontal scrollbar during transition */
+}
+
+.container {
+    display: flex;
+    position: relative; /* Needed for absolute positioning */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 220px;
+    background-color: #e9dcd5 !important; /* CHANGED BACK TO BRIGHTER PINK */
+    height: 100vh;
+    border-right: 1px solid #ecb9b9;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    transform: translateX(0); /* Initial state */
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Collapsed state for sidebar */
+body.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+    width: 0; /* Collapse width */
+    border-right: none;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+/* Style for sidebar logo */
+.sidebar-logo {
+    height: 40px; /* Set common height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+}
+
+/* Sidebar Nav Icons */
+.sidebar-nav {
+    color: #333; /* Ensure default dark text color */
+}
+
+.sidebar-nav i {
+    color: #555; /* Restore default dark icon color */
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+}
+
+.sidebar-nav ul {
+    margin: 10px 0; /* Restore default margins */
+    list-style: none;
+    padding: 0; /* Restore default padding */
+}
+
+.sidebar-nav li {
+    padding: 8px 15px;
+    border-bottom: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sidebar-nav li.separator {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-weight: bold;
+    color: #555;
+    font-size: 12px;
+}
+
+.sidebar-nav li.sub-menu-header {
+     background-color: transparent;
+     font-weight: bold;
+     color: #d32f2f;
+     padding: 8px 15px;
+     margin-top: 10px;
+     font-size: 11px;
+     text-transform: uppercase;
+}
+
+.sidebar-nav li.active {
+    background-color: #fbe9e7; /* Original light active background */
+    border-left: 3px solid #d32f2f; /* Original red border */
+    font-weight: bold;
+    color: #d32f2f !important; /* Ensure active text is RED */
+    padding-left: 12px;
+}
+
+.sidebar-nav li.active i {
+     color: #d32f2f !important; /* Ensure active icon is RED */
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #333; /* Ensure default dark text color */
+    display: block;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+.sidebar-nav a:hover {
+    color: #d32f2f; /* Restore original red hover color */
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 220px; /* Default margin */
+    padding: 0;
+    flex-grow: 1;
+    background-color: #fff;
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition for margin */
+}
+
+/* Adjust main content margin when sidebar is collapsed */
+body.sidebar-collapsed .main-content {
+    margin-left: 0;
+}
+
+/* Main Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+    height: 50px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the actual logo in the header */
+.header-logo {
+    height: 40px; /* Set common height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    margin-left: 10px; /* Add some space after toggle button */
+    margin-right: 20px; /* Add space before search bar */
+}
+
+/* Add style for the toggle button */
+.sidebar-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    padding: 0 10px; /* Padding around icon */
+}
+
+.switch-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #555;
+}
+
+.switch-btn .et-red {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    background-color: #f8f9fa;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    width: 180px;
+    background-color: transparent;
+}
+
+.search-bar i {
+    color: #777;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.learn-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.offer-banner {
+    background-color: #ffeb3b;
+    color: #c62828;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 1px solid #fbc02d;
+}
+
+.subscribe-btn,
+.signin-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.subscribe-btn {
+    background-color: #c62828;
+    color: white;
+    border: none;
+}
+
+.signin-btn {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+/* Screeners Section Styles */
+.screeners-section {
+    padding: 25px 30px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+/* Custom Search Section */
+.custom-search-section {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.custom-search-section h2 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.custom-search-section h2 i {
+    color: #777;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.search-input-area {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.search-input-area input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-input-area .search-btn {
+    padding: 8px 25px;
+    background-color: #424242;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.screener-options {
+    display: flex;
+    gap: 10px;
+}
+
+.screener-options button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #555;
+}
+
+.screener-options button i {
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+/* Browse & Pick Section */
+.browse-and-pick {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* New Four Box Layout Styles */
+.new-category-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Gap between boxes */
+    padding: 20px 0; /* Add some padding */
+}
+
+/* New Stock Categories Section Styles */
+.stock-categories {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.stock-categories .category-box {
+    flex: 1; /* Ensure equal width */
+}
+
+.category-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category-box h3 {
+    margin-top: 0;
+    margin-bottom: 5px; /* Smaller gap below title */
+    font-size: 1.1em;
+    color: #222;
+}
+
+.box-subtitle {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 15px; /* Space before items */
+}
+
+.category-box .category-item {
+    border-top: 1px solid #f0f0f0; /* Separator line */
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.category-box .category-item:first-of-type {
+    border-top: none; /* No line for the first item */
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.category-box .category-item h4 {
+    font-size: 0.95em;
+    margin-bottom: 3px;
+}
+
+.category-box .category-item p {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.category-box .view-more-link {
+    margin-top: 15px; /* Space above view more */
+    font-size: 0.9em;
+}
+
+.category-box {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.category-box > p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.category-items {
+    margin-bottom: 15px;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-item div {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.category-item h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    color: #444;
+}
+
+.category-item h4 i {
+    font-size: 10px;
+    color: #888;
+    margin-left: 5px;
+}
+
+.category-item p {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+    line-height: 1.4;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+.item-count {
+    background-color: #fff0f0;
+    border: 1px solid #fdd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    min-width: 50px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #d32f2f;
+    flex-shrink: 0;
+}
+
+.item-count span {
+    font-size: 10px;
+    font-weight: normal;
+    color: #888;
+    display: block;
+    line-height: 1;
+}
+
+.view-more-link {
+    display: block;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.view-more-link i {
+    margin-left: 5px;
+}
+
+/* Style for the custom image icon */
+.custom-search-icon {
+    height: 16px; /* Match approximate icon size */
+    width: 16px;  /* Match approximate icon size */
+    margin-right: 8px; /* Match icon spacing */
+    vertical-align: middle; /* Align with text */
+}
+
+/* Style for the full-width bottom image */
+.et-bottom-image {
+    display: block; /* Prevents extra space below image */
+    width: 100%;    /* Make image span full width of container */
+    height: auto;   /* Maintain aspect ratio */
+    margin-top: 20px; /* Add space above */
+}
+
+/* Main Footer Styles */
+.main-footer {
+    background-color: #f8f9fa; /* Light background for footer */
+    color: #aaa;
+}
+
+/* Custom Search Results Table */
+#custom-search-results .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 12px; /* Smaller font for table data */
+}
+
+#custom-search-results .results-table th,
+#custom-search-results .results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#custom-search-results .results-table th {
+    background-color: #f2f2f2; /* Light grey header */
+    font-weight: bold;
+}
+
+#custom-search-results .results-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping */
+}
+
+#custom-search-results .results-table tr:hover {
+    background-color: #f1f1f1; /* Hover effect */
+}
+
+/* Ensure generated SQL preformatted text wraps */
+#generated-sql {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    font-family: monospace;
+}
