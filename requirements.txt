@@ -3,3 +3,5 @@ openai
 sqlparse
 Flask-CORS
 python-dotenv
+pandas
+sqlite3
