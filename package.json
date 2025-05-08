@@ -1,0 +1,16 @@
+{
+  "name": "et-screener-chat-to-sql",
+  "version": "1.0.0",
+  "description": "Chat-to-SQL API using Azure OpenAI and SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "sqlite3": "^5.0.0",
+    "openai": "^4.2.1"
+  }
+}
